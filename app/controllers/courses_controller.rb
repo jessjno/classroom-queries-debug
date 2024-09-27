@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
+    @the_id = params.fetch("path_id")
     @course = Course.where({:id => the_id }).at(0)
 
     render({ :template => "courses/show" })
